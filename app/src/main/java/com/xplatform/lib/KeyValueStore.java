@@ -44,9 +44,8 @@ public class KeyValueStore extends IKeyValueStorage {
     }
 
     @Override
-    public Integer readInt32(String key) {
-        int value = sharedPreferences.getInt(key, -1);
-        return (value == -1) ? null : value;
+    public int readInt32(String key) {
+        return sharedPreferences.getInt(key, 0);
     }
 
     @Override

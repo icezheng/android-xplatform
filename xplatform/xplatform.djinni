@@ -12,7 +12,7 @@ IKeyValueStorage = interface +j +o {
   remove(key: string);
 
   readString(key: string) : optional<string>;
-  readInt32(key: string) : optional<i32>;
+  readInt32(key: string) : i32;
   readBool(key: string) : bool;
   readBinary(key: string) : optional<binary>;
 }
