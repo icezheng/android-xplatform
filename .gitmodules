@@ -1,0 +1,3 @@
+[submodule "xplatform/djinni"]
+	path = xplatform/djinni
+	url = git@github.com:dropbox/djinni.git

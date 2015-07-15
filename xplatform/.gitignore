@@ -1,0 +1,4 @@
+generated-srcs
+.idea
+.DS_Store
+djinni/src/sbt.resolvers.properties

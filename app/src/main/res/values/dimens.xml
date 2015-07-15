@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="space">8dp</dimen>
+    <dimen name="space2">16dp</dimen>
+    <dimen name="space3">24dp</dimen>
+</resources>

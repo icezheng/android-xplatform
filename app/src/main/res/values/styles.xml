@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.NoActionBar" />
+
+    <style name="Theme.Base" parent="FrameworkRoot.Theme">
+
+        <!--<item name="android:windowBackground">@color/grey</item>-->
+
+        <!--<item name="colorPrimary">@color/primary_grey</item>-->
+        <!--<item name="colorPrimaryDark">@color/primary_grey</item>-->
+        <!--<item name="colorControlHighlight">@color/ripple_overlay</item>-->
+        <!--<item name="colorAccent">@color/primary_green</item>-->
+        <!--<item name="colorControlNormal">@color/type_1</item>-->
+
+        <!--<item name="android:textColorPrimary">@color/type_1</item>-->
+        <!--<item name="android:textColorSecondary">@color/type_2</item>-->
+
+        <!--<item name="android:editTextStyle">@style/EditText</item>-->
+
+        <!--<item name="android:textColor">@color/type_1</item>-->
+
+    </style>
+
+    <style name="Theme.Flo" parent="Theme.Base" />
+
+    <style name="Theme.Flo.ToolbarThemeOverlay">
+        <!--<item name="android:textColorPrimary">@color/white</item>-->
+        <!--<item name="colorPrimary">@color/primary_grey</item>-->
+        <!--<item name="colorControlNormal">@color/white</item>-->
+        <!--<item name="colorControlHighlight">@color/white</item>-->
+    </style>
+
+</resources>

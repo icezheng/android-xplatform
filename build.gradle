@@ -1,0 +1,48 @@
+apply from: "./libraries.gradle"
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+
+allprojects {
+
+    apply plugin: 'checkstyle'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    // Temporary workaround for bug: https://code.google.com/p/android-test-kit/issues/detail?id=136
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-annotations:${rootProject.ext.androidSupportVersion}"
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.encoding = "UTF-8"
+        }
+    }
+}
+
+project.ext.preDexLibs = !project.hasProperty('disablePreDex')
+
+subprojects {
+    project.plugins.whenPluginAdded { plugin ->
+        if ("com.android.build.gradle.AppPlugin".equals(plugin.class.name)) {
+            project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
+        } else if ("com.android.build.gradle.LibraryPlugin".equals(plugin.class.name)) {
+            project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}

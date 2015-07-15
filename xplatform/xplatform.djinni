@@ -1,0 +1,34 @@
+UserProfile = record {
+  firstName : string;
+  lastName : string;
+}
+
+IKeyValueStorage = interface +j +o {
+  writeString(key: string, value: string);
+  writeInt32(key: string, value: i32);
+  writeBool(key: string, value: bool);
+  writeBinary(key: string, value: binary);
+
+  remove(key: string);
+
+  readString(key: string) : optional<string>;
+  readInt32(key: string) : optional<i32>;
+  readBool(key: string) : bool;
+  readBinary(key: string) : optional<binary>;
+}
+
+IUserProfileService = interface +c {
+  static createUserProfileService(keyValueStorage: IKeyValueStorage) : IUserProfileService;
+
+  updateUserProfile(userProfile: UserProfile) : UserProfile;
+  getUserProfile() : optional<UserProfile>;
+  removeUserProfile();
+
+  addListener(listener: IUserProfileServiceListener);
+  removeListener(listener: IUserProfileServiceListener);
+}
+
+IUserProfileServiceListener = interface +o +j {
+  userProfileUpdated(userProfile: UserProfile);
+  userProfileRemoved();
+}
