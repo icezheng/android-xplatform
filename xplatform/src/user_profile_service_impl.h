@@ -5,7 +5,7 @@
 #include <memory>
 #include <vector>
 
-namespace flo {
+namespace xplatform {
 
 class IKeyValueStorage;
 

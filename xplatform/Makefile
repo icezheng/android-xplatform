@@ -20,7 +20,7 @@ JNI_OPTS := \
 
 CPP_OPTS := \
 	--cpp-out $(GENERATED_SRCS)/cpp \
-	--cpp-namespace flo \
+	--cpp-namespace xplatform \
 	--ident-cpp-enum-type foo_bar \
 	--cpp-ext cc \
 	--hpp-ext h \

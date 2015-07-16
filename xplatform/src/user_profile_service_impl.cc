@@ -2,7 +2,7 @@
 #include "IKeyValueStorage.h"
 #include "IUserProfileServiceListener.h"
 
-namespace flo {
+namespace xplatform {
 
     static std::string const kProfileKey = "profile";
     static std::string const kProfileFirstNameKey = kProfileKey + "." + "firstName";
